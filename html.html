@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">点击</button>
+    <input type="text" placeholder="输入内容" id="ipt">
+    <script>
+    //   document.body.onmousedown = function () {
+    //     alert("hello");
+    //   };
+    //   var event = document.createEvent("MouseEvents");
+    //   // initEvent接受3个参数：
+    //   // 事件类型，是否冒泡，是否阻止浏览器的默认行为
+    //   event.initEvent("mousedown", true, true);
+    //   document.querySelector("#btn").addEventListener("click", () => {
+    //     //触发document上绑定的xx事件
+    //     document.body.dispatchEvent(event);
+    //   });
+
+      function focusEvent(el, evtType) {
+        let evtObj = document.createEvent("HTMLEvents");
+        evtObj.initEvent(evtType, false, true);
+        el.dispatchEvent(evtObj);
+        console.log(evtObj);
+      }
+
+      focusEvent(document.querySelector('#ipt'), 'focusout')
+    //   document.querySelector('#ipt').focus()
+
+
+    </script>
+  </body>
+</html>
